@@ -1,0 +1,41 @@
+@import "../../mixins.scss";
+.search-results-page {
+    min-height: 700px;
+    padding-top: 100px;
+    .results-not-found {
+        font-size: 24px;
+        color: var(--black-light);
+    }
+    .page-title {
+        font-size: 24px;
+        line-height: 34px;
+        color: white;
+        margin-bottom: 25px;
+    }
+    .content {
+        // display: flex;
+        // flex-flow: row wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 50px;
+        @include xsm{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include md {
+            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include lg{
+            grid-template-columns: repeat(5, 1fr);
+        }
+        .movie-card {
+            .posterblock {
+                margin-bottom: 20px;
+            }
+        }
+        .loading-spinner{
+            grid-column: 1 / -1;
+        }
+    }
+}
